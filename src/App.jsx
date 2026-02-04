@@ -2,17 +2,17 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Navigation from './Components/Navigation'
 import HomePage from './Pages/HomePage'
+import { HelmetProvider } from 'react-helmet-async'
 
 const App = () => {
   return (
     <div>
-      <Navigation />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-
-
-      </Routes>
-
+      <HelmetProvider>
+        <Navigation />
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+        </Routes>
+      </HelmetProvider>
     </div>
   )
 }
