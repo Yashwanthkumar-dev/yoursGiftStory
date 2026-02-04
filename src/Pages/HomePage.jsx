@@ -1,5 +1,6 @@
 import React from 'react'
 import WhyChooseUs from '../Components/WhyChooseUs';
+import CategoryCard from '../Components/CategoryCard';
 
 const HomePage = () => {
     const phoneNumber = "918148035717";
@@ -34,10 +35,18 @@ const HomePage = () => {
                 </div>
             </div>
             {/* hero section */}
+
+            {/* why us section*/}
             <div>
                 <WhyChooseUs />
             </div>
+            {/* why us section*/}
 
+            {/* category section */}
+            <div>
+                <CategoryCard />
+            </div>
+            {/* category section */}
         </>
     )
 }
