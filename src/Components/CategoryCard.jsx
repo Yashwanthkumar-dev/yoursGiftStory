@@ -1,45 +1,55 @@
-import React from 'react'
-
-const CategoryCard = (props) => {
+import flower_boquet from "../assets/Flower-boquet.jpeg"
+import Gift_Box from "../assets/Gift_Box.jpeg"
+import Hoop_wedding from "../assets/Hoop-wedding.jpeg"
+// import photo_box from"../assets/photo-box.jpeg"
+import resin_art from "../assets/resin_art.jpeg"
+import { FaArrowRightLong } from "react-icons/fa6"
+const CategoryCard = () => {
     const categoryData = [
         {
             id: 1,
             title: "Gift Box",
-            description: "gift box description",
-            alt: "YoursGiftStory-Gift-Box"
+            description: "Surprise your loved ones with our premium personalized Gift Boxes. Curated with love for birthdays, anniversaries, and special moments.",
+            alt: "YoursGiftStory-Custom-Personalized-Gift-Box",
+            image: Gift_Box
         },
         {
             id: 2,
             title: "Hoops Embroidery",
-            description: "Hoops Embroidery description",
+            description: "Beautifully handcrafted Embroidery Hoops to preserve your memories. Perfect personalized wall decor and unique wedding keepsakes.",
             alt: "YoursGiftStory-Hoops-Embroidery",
+            image: Hoop_wedding
         },
         {
             id: 3,
             title: "Resin Art",
-            description: "Resin Art descritpion",
-            alt: "YoursGiftStory-Resin-Art"
+            description: "Exquisite Resin Art pieces from custom keychains to preservation frames. Turn your special flowers and memories into timeless art.",
+            alt: "YoursGiftStory-Resin-Art",
+            image: resin_art
         },
         {
             id: 4,
             title: "Paper Flower Bouquet",
-            description: "paper Flower Bouquet description",
-            alt: "YoursGiftStory-Paper-Flower-Bouquet"
+            description: "Everlasting Paper Flower Bouquets handcrafted with precision. A unique, eco-friendly gift that stays fresh forever.",
+            alt: "YoursGiftStory-Paper-Flower-Bouquet",
+            image: flower_boquet
         },
-        {
-            id: 5,
-            title: "Personalised letters",
-            description: "personalised letters description",
-            alt: "YoursGiftStory-personalised-letters"
-        }]
+    ]
     return (
         <>
-            <div className='border p-4'>
+            <div>
+                <h5 className='font-playfair text-center font-extrabold capitalize text-[#2A5D5D] text-[26px]'>Shop by story</h5>
+            </div>
+            <div className='p-4 grid grid-cols gap-2'>
                 {
                     categoryData && categoryData.map((cat) => (
-                        <div key={cat.ifd} className='border flex flex-col items-center p-2 my-4'>
-                            <h4 className='font-playfair'>{cat.title}</h4>
-                            <p>{cat.description}</p>
+                        <div key={cat.ifd} className=' my-4 rounded-lg shadow-lg pb-4 leading-relaxed bg-white'>
+                            <img src={cat.image} alt={cat.alt} className="w-full rounded-t-2xl  h-80" />
+                            <h4 className='font-playfair text-[18px] mt-4 font-semibold tracking-wide text-[#2A5D5D] ml-3'>{cat.title}</h4>
+                            <p className='capitalize font-playfair text-sm tracking-wide text-[16px] mx-3 text-justify text-gray-500 leading-relaxed'>{cat.description}</p>
+                            <div className="flex items-center gap-x-3 font-playfair text-[#B59454] "><a href="#" className="font-bold capitalize mt-2 ml-3">view collection </a>
+                                <i><FaArrowRightLong size={16} className="mt-3"/></i></div>
+
                         </div>
                     ))
                 }
