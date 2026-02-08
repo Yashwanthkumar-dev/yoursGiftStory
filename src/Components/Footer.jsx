@@ -24,16 +24,15 @@ const Footer = () => {
           <div>
             <p className='font-playfair text-white/80 font-medium text-[14px] leading-relaxed text-left'>Subscribe to our newsletter for exclusive offers, gift ideas, and heartwarming stories.</p>
           </div>
-          <div>
-            <input type="email" className='my-4 w-68 py-1.5 rounded-3xl bg-white/20 placeholder:text-white/60 pl-4 placeholder:font-playfair outline-0 font-playfair text-white' placeholder='Your email address ' />
+          <form action="https://formspree.io/f/mreagvob" method="post"><div>
+            <input type="email" name='email' className='my-4 w-68 py-1.5 rounded-3xl bg-white/20 placeholder:text-white/60 pl-4 placeholder:font-playfair outline-0 font-playfair text-white' placeholder='Your email address ' />
           </div>
           <div >
             <button className='text-white/90 capitalize font-playfair  w-68 py-1.5 rounded-3xl bg-[#B59454]
-            outline-none font-bold'>subscribe</button>
-          </div>
-          <div>
-
-          </div>
+            outline-none font-bold' type='submit'>subscribe</button>
+          </div></form>
+          
+          
         </div>
 
         <div className='py-4 mx-5 text-white/15'>
