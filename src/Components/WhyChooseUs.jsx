@@ -1,6 +1,5 @@
 import React from 'react'
 import { Heart, Star, Truck } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 const WhyChooseUs = () => {
 
@@ -24,15 +23,7 @@ const WhyChooseUs = () => {
     ]
     return (
         <>
-            <Helmet>
-                <title>YoursGiftStory | Best Personalized Handcrafted Gifts in India</title>
 
-                <meta name='description' content='Discover unique handcrafted gifts at YoursGiftStory. We specialize in personalized frames, hampers, and custom treasures for birthdays and anniversaries.' />
-
-                <meta name='keywords' content='personalized gifts, handcrafted gifts India, custom photo frames, YoursGiftStory' />
-
-                <link rel="canonical" href="https://yoursgiftstory.com/" />
-            </Helmet>
             {/* why us */}
             <div
 
