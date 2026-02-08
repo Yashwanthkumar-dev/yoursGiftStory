@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import companyLogo from "../assets/company-logo.png"
 import { Link } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 const Navigation = () => {
     const [showNav, setShowNav] = useState(false);
 
@@ -11,26 +11,29 @@ const Navigation = () => {
     return (
         <>
             {/* Header Section */}
-            <nav className='flex items-center justify-between py-3 shadow sticky top-0 z-50 bg-white px-4 md:px-10'>
-                <div className='flex items-center gap-2'>
+            <nav className='flex items-center justify-between py-3 shadow sticky top-0 z-50 bg-white px-4 md:px-10 overflow-hidden'>
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    className='flex items-center gap-2'>
                     <img src={companyLogo} alt="YoursGiftStory-Logo" className='w-12 rounded-full md:w-14' />
                     <h1 className='font-playfair font-medium md:text-xl text-[#2A5D5D]'>YoursGiftStory</h1>
-                </div>
+                </motion.div>
 
                 {/* Hamburger Menu Icon */}
-                <div 
-                    className='cursor-pointer space-y-1.5 z-50' 
+                <motion.div
+                    initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: 'easeInOut'}}
+                    className='cursor-pointer space-y-1.5 z-50'
                     onClick={() => setShowNav(!showNav)}
                 >
                     <div className={`w-6 h-0.5 bg-green-600 transition-all ${showNav ? 'rotate-45 translate-y-2' : ''}`}></div>
                     <div className={`w-4 h-0.5 bg-green-600 transition-all ${showNav ? 'opacity-0' : ''}`}></div>
                     <div className={`w-6 h-0.5 bg-green-600 transition-all ${showNav ? '-rotate-45 -translate-y-2' : ''}`}></div>
-                </div>
+                </motion.div>
             </nav>
 
             {/* DARK OVERLAY: Idhu thaan full screen click-ah handle pannum */}
             {showNav && (
-                <div 
+                <div
                     className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 transition-opacity"
                     onClick={closeMenu}
                 ></div>
