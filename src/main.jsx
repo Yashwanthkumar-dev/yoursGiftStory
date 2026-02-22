@@ -9,7 +9,7 @@ import { SpeedInsights } from '@vercel/speed-insights/react'
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <StrictMode>
-      <App />
+      <App/>
       <Analytics />
       <SpeedInsights/>
     </StrictMode>

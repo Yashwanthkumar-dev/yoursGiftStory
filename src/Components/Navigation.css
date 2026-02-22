@@ -1,0 +1,18 @@
+.nav {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav::after {
+  content: "";
+  border-top: 2px solid #b59454;
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  width: 0%;
+}
+
+.nav:hover::after {
+  width: 100%;
+  transition: ease-in-out 400ms;
+}
