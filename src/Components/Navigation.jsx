@@ -43,7 +43,7 @@ const Navigation = () => {
             <div className={`fixed top-0 right-0 h-full w-[70%] max-w-[300px] bg-white z-40 shadow-2xl transition-transform duration-500 ease-in-out ${showNav ? 'translate-x-0' : 'translate-x-full'}`}>
                 <ul className='flex flex-col gap-y-6 pt-24 px-8 capitalize font-playfair text-xl text-[#2A5D5D]'>
                     <Link to="/" onClick={closeMenu} className='hover:text-[#B59454] transition-colors'>home</Link>
-                    <Link to="/gallery" onClick={closeMenu} className='hover:text-[#B59454] transition-colors'>Gift gallery</Link>
+                    <Link to="/gift-gallery" onClick={closeMenu} className='hover:text-[#B59454] transition-colors'>Gift gallery</Link>
                     <Link to="/about" onClick={closeMenu} className='hover:text-[#B59454] transition-colors'>Our journey</Link>
                     <Link to="/contact" onClick={closeMenu} className='hover:text-[#B59454] transition-colors'>contact</Link>
                 </ul>
