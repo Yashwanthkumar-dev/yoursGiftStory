@@ -114,7 +114,7 @@ const HomePage = () => {
             className="flex mt-6 md:justify-start md:w-full md:ml-5 md:mt-10 lg:ml-20 "
           >
             <Link to="/gift-gallery"
-            className=" outline-none font-playfair capitalize bg-secondary px-12 py-2 rounded-lg text-white text-[16px] font-medium sm:text-lg lg:text-xl lg:py-4 lg:rounded-2xl cursor-pointer hover:bg-secondary/80">
+            className=" outline-none font-playfair capitalize bg-secondary px-12 py-2 rounded-lg text-white text-[16px] font-medium sm:text-lg lg:text-xl lg:py-4 lg:rounded-2xl cursor-pointer hover:bg-secondary/80 hover:shadow-xl duration-600 transition">
               view stories
             </Link>
           </motion.div>
