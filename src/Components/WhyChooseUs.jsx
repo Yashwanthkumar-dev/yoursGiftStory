@@ -26,6 +26,34 @@ const WhyChooseUs = () => {
     <>
       {/* why us */}
       <div className="pb-12 overflow-hidden mx-10 lg:mx-1 ">
+        {/* animation */}
+
+        <div>
+          <motion.div
+            animate={{
+              y: [1, -20, 10],
+              opacity: [0.3, 0, 0.3],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            className="p-6 rounded-full w-fit relative bg-primary"
+          ></motion.div>
+
+
+          {/* square */}
+
+           <motion.div
+            animate={{
+              y: [1, -20, 10],
+              opacity: [0.3, 0, 0.3],
+              scale: [1, 1.1, 1],
+              rotate:360
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            className="p-6 rounded-lg w-fit relative bg-primary left-450 top-150"
+          ></motion.div>
+        </div>
+
         <div>
           <motion.h2
             initial={{ opacity: 0, x: 50 }}
