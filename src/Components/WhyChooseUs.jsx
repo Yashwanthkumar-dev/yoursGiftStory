@@ -33,15 +33,15 @@ const WhyChooseUs = () => {
                         initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: 'easeInOut' }}
                         className='text-center mt-8 font-playfair text-primary font-semibold text-[25px] capitalize w-48 tracking-wide mx-auto'>Why choose YoursGiftStory</motion.h2>
                 </div>
-                <div className='p-4 space-y-12 md:border md:flex md:items-center '>
+                <div className=' space-y-12 md:border md:flex md:items-center '>
                     {
                         whyusUs.map((card, index) => (
                             <motion.div key={index}
                                 initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: 'easeInOut' }}
-                                className='text-center p-4 rounded-lg bg-white font-playfair shadow-md shadow-gray-300 mt-5 space-y-3 hover:shadow-lg transition duration-500 '>
+                                className='border shadow px-6 py-4 mt-3 text-center '>
                                 <div className='text-secondary py-3 bg-[#b5955418] mx-auto w-12 flex justify-center rounded-full'>{card.icon}</div>
                                 <h3 className='font-medium text-xl text-teal-700 capitalize tracking-wide'>{card.title}</h3>
-                                <p className='font-playfair text-gray-600 leading-relaxed text-[1.5rem] md:text-[2rem]'>{card.descritpion}</p>
+                                <p className='font-playfair text-gray-600 leading-relaxed text-[1rem] md:text-[2rem]'>{card.descritpion}</p>
                             </motion.div>
                         ))
                     }
