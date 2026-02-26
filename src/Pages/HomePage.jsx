@@ -129,6 +129,7 @@ const HomePage = () => {
                     src={img.pic}
                     alt={img.Alter}
                     className="h-70 w-65  rounded-lg hover:scale-110 transition duration-600 "
+                    loading="lazy"
                   />
                 </div>
               );
