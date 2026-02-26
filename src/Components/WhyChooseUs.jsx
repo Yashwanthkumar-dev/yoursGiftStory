@@ -38,10 +38,10 @@ const WhyChooseUs = () => {
                         whyusUs.map((card, index) => (
                             <motion.div key={index}
                                 initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: 'easeInOut' }}
-                                className='border shadow px-6 py-4 mt-3 text-center '>
+                                className='shadow-md px-6 py-4 mt-3  rounded-lg '>
                                 <div className='text-secondary py-3 bg-[#b5955418] mx-auto w-12 flex justify-center rounded-full'>{card.icon}</div>
-                                <h3 className='font-medium text-xl text-teal-700 capitalize tracking-wide'>{card.title}</h3>
-                                <p className='font-playfair text-gray-600 leading-relaxed text-[1rem] md:text-[2rem]'>{card.descritpion}</p>
+                                <h3 className='font-medium text-xl text-teal-700 capitalize tracking-wide text-center my-2'>{card.title}</h3>
+                                <p className='font-playfair text-gray-600 leading-relaxed text-[1rem] md:text-[2rem] text-justify'>{card.descritpion}</p>
                             </motion.div>
                         ))
                     }
