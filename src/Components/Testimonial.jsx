@@ -48,7 +48,7 @@ const Testimonial = () => {
           testtimonialData.map((review, index) => (
             <SwiperSlide
               key={index}
-              className=" p-4 rounded-xl shadow-lg font-playfair  mt-7 leading-relaxed text-justify border-gray-200  min-h-60 mb-5 overflow-hidden border"
+              className=" p-4 rounded-xl shadow-lg font-playfair  mt-7 leading-relaxed text-justify border-gray-200  min-h-60 mb-5 overflow-hidden border text-ellipsis"
             >
               <i>{review.rating}⭐</i>
               <p className="font-playfair font-medium text-gray-500">
