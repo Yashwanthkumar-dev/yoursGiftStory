@@ -1,6 +1,28 @@
-import { Search } from "lucide-react";
-
+import { Loader, Search } from "lucide-react";
+import { Products } from "../data/data";
+import { useEffect, useState } from "react";
 function ProductList() {
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  function getAllProduct() {
+    try {
+      setLoading(true);
+      const respone = Products;
+      console.log(respone);
+      setTimeout(() => {
+        setProduct(respone);
+        setLoading(false);
+      }, 800);
+    } catch (error) {
+      console.log("error message :", error);
+    }
+  }
+
+  useEffect(() => {
+    getAllProduct();
+  }, []);
+
   return (
     <>
       <div className=" mt-6 mx-3">
@@ -22,9 +44,37 @@ function ProductList() {
             <Search />
           </i>
         </div>
-
+        {/* all product listing */}
         <div>
-            
+          {loading ? (
+            <div>
+              <Loader className="animate-spin duration-800 transition-transform  text-center  mx-auto" />
+            </div>
+          ) : (
+            <div className=" grid grid-cols-1 gap-4 mt-10 mb-10  sm:grid-cols-2 md:grid-cols-2 md:gap-x-3 lg:grid-cols-4 ">
+              {product &&
+                product.map((pro, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="shadow-lg space-y-2 grid border border-gray-200 rounded-t-lg  pb-4 hover:shadow-xl overflow-hidden group"
+                    >
+                      <img
+                        src={pro.image}
+                        alt={pro.name}
+                        className="rounded-t-lg object-cover h-80 hover:scale-101 duration-500 transition group-hover:scale-105  w-full"
+                      />
+                      <h1 className="pl-3 pt-2 text-lg font-playfair capitalize text-primary font-semibold">
+                        {pro.name}
+                      </h1>
+                      <h1 className="pl-3 text-secondary font-playfair">
+                        {"Beautifully handcrafted with love."}
+                      </h1>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         </div>
       </div>
     </>
