@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 function ProductList() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
 
   function getAllProduct() {
     try {
@@ -23,6 +24,9 @@ function ProductList() {
     getAllProduct();
   }, []);
 
+  const filterProducts = product.filter((pro) =>
+    pro.name.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
   return (
     <>
       <div className=" mt-6 mx-3">
@@ -37,8 +41,10 @@ function ProductList() {
         <div className=" py-3 mx-3 flex items-center justify-end">
           <input
             type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="search for gifts (e.g.,Wooden Art,Frames...)"
-            className="border w-64 py-2 px-3 rounded-l-lg border-r-0 border-gray-400 placeholder:truncategt"
+            className="border w-64 py-2 px-3 rounded-l-lg border-r-0 border-gray-400 placeholder:truncategt outline-0"
           />
           <i className="border border-l-0 text-primary/65 py-2 pr-2 border-gray-400 rounded-r-lg">
             <Search />
@@ -52,8 +58,8 @@ function ProductList() {
             </div>
           ) : (
             <div className=" grid grid-cols-2 gap-4 mt-10 mb-10  sm:grid-cols-2 md:grid-cols-2 md:gap-x-3 lg:grid-cols-4 ">
-              {product &&
-                product.map((pro, index) => {
+              {filterProducts &&
+                filterProducts.map((pro, index) => {
                   return (
                     <div
                       key={index}
@@ -63,6 +69,7 @@ function ProductList() {
                         src={pro.image}
                         alt={pro.name}
                         className="rounded-t-lg object-cover h-30 hover:scale-101 duration-500 transition group-hover:scale-105 w-full sm:h-60 md:h-80"
+                        loading="lazy"
                       />
                       <h1 className="pl-3 pt-2 text-lg font-playfair capitalize text-primary font-semibold line-clamp-1">
                         {pro.name}
