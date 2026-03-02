@@ -5,7 +5,7 @@ function ProductList() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [error, setError] = useState(false);
   function getAllProduct() {
     try {
       setLoading(true);
@@ -27,6 +27,10 @@ function ProductList() {
   const filterProducts = product.filter((pro) =>
     pro.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
+
+  if (error === true) {
+  }
+
   return (
     <>
       <div className=" mt-6 mx-3">
@@ -58,28 +62,31 @@ function ProductList() {
             </div>
           ) : (
             <div className=" grid grid-cols-2 gap-4 mt-10 mb-10  sm:grid-cols-2 md:grid-cols-2 md:gap-x-3 lg:grid-cols-4 ">
-              {filterProducts &&
-                filterProducts.map((pro, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="shadow-lg space-y-2 grid border border-gray-200 rounded-t-lg  pb-4 hover:shadow-xl overflow-hidden group"
-                    >
-                      <img
-                        src={pro.image}
-                        alt={pro.name}
-                        className="rounded-t-lg object-cover h-30 hover:scale-101 duration-500 transition group-hover:scale-105 w-full sm:h-60 md:h-80"
-                        loading="lazy"
-                      />
-                      <h1 className="pl-3 pt-2 text-lg font-playfair capitalize text-primary font-semibold line-clamp-1">
-                        {pro.name}
-                      </h1>
-                      <h1 className="pl-3 text-secondary font-playfair line-clamp-1">
-                        {"Beautifully handcrafted with love."}
-                      </h1>
-                    </div>
-                  );
-                })}
+              {filterProducts && filterProducts.length > 0 ? (
+                filterProducts.map((pro, index) => (
+                  <div
+                    key={index}
+                    className="shadow-lg space-y-2 grid border border-gray-200 rounded-t-lg  pb-4 hover:shadow-xl overflow-hidden group"
+                  >
+                    <img
+                      src={pro.image}
+                      alt={pro.name}
+                      className="rounded-t-lg object-cover h-30 hover:scale-101 duration-500 transition group-hover:scale-105 w-full sm:h-60 md:h-80"
+                      loading="lazy"
+                    />
+                    <h1 className="pl-3 pt-2 text-lg font-playfair capitalize text-primary font-semibold line-clamp-1">
+                      {pro.name}
+                    </h1>
+                    <h1 className="pl-3 text-secondary font-playfair line-clamp-1">
+                      {"Beautifully handcrafted with love."}
+                    </h1>
+                  </div>
+                ))
+              ) : (
+                <div className="col-span-full py-20">
+                  <h1 className="text-gray-400 text-center font-playfair italic text-lg capitalize">maching ahh ethuvumm illai </h1>
+                </div>
+              )}
             </div>
           )}
         </div>
