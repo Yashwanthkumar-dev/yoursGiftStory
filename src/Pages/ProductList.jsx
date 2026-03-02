@@ -51,7 +51,7 @@ function ProductList() {
               <Loader className="animate-spin duration-800 transition-transform  text-center  mx-auto" />
             </div>
           ) : (
-            <div className=" grid grid-cols-1 gap-4 mt-10 mb-10  sm:grid-cols-2 md:grid-cols-2 md:gap-x-3 lg:grid-cols-4 ">
+            <div className=" grid grid-cols-2 gap-4 mt-10 mb-10  sm:grid-cols-2 md:grid-cols-2 md:gap-x-3 lg:grid-cols-4 ">
               {product &&
                 product.map((pro, index) => {
                   return (
@@ -62,12 +62,12 @@ function ProductList() {
                       <img
                         src={pro.image}
                         alt={pro.name}
-                        className="rounded-t-lg object-cover h-80 hover:scale-101 duration-500 transition group-hover:scale-105  w-full"
+                        className="rounded-t-lg object-cover h-30 hover:scale-101 duration-500 transition group-hover:scale-105 w-full sm:h-60 md:h-80"
                       />
-                      <h1 className="pl-3 pt-2 text-lg font-playfair capitalize text-primary font-semibold">
+                      <h1 className="pl-3 pt-2 text-lg font-playfair capitalize text-primary font-semibold line-clamp-1">
                         {pro.name}
                       </h1>
-                      <h1 className="pl-3 text-secondary font-playfair">
+                      <h1 className="pl-3 text-secondary font-playfair line-clamp-1">
                         {"Beautifully handcrafted with love."}
                       </h1>
                     </div>
