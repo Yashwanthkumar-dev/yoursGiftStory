@@ -15,11 +15,20 @@ function ProductList() {
         setProduct(respone);
         setLoading(false);
       }, 800);
+      setError(false);
     } catch (error) {
       console.log("error message :", error);
+      setError(true);
     }
   }
 
+  if (error === true) {
+    return (
+      <div>
+        <h1>product was not found </h1>
+      </div>
+    );
+  }
   useEffect(() => {
     getAllProduct();
   }, []);
@@ -72,7 +81,7 @@ function ProductList() {
                       src={pro.image}
                       alt={pro.name}
                       className="rounded-t-lg object-cover h-30 hover:scale-101 duration-500 transition group-hover:scale-105 w-full sm:h-60 md:h-80"
-                      loading="lazy"
+                      // loading="lazy"
                     />
                     <h1 className="pl-3 pt-2 text-lg font-playfair capitalize text-primary font-semibold line-clamp-1">
                       {pro.name}
@@ -84,7 +93,9 @@ function ProductList() {
                 ))
               ) : (
                 <div className="col-span-full py-20">
-                  <h1 className="text-gray-400 text-center font-playfair italic text-lg capitalize">maching ahh ethuvumm illai </h1>
+                  <h1 className="text-gray-400 text-center font-playfair italic text-lg capitalize">
+                    maching ahh ethuvumm illai{" "}
+                  </h1>
                 </div>
               )}
             </div>
